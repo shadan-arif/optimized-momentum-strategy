@@ -1,5 +1,5 @@
 {
-  "backtest_date": "2025-11-21T12:29:19.828186+00:00",
+  "backtest_date": "2025-11-21T13:09:03.140519+00:00",
   "period": "2024-01-01 to 2024-06-30",
   "strategy": "optimized_momentum",
   "btc": {

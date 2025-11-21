@@ -37,7 +37,7 @@ To save results to a local directory (reports folder):
 docker run --rm -v "$(pwd)/reports:/app/reports" optimized-backtest
 ```
 
-This mounts the local `reports/` directory to `/app/reports` in the container, allowing you to access the `backtest_results.json` file after the run.
+This mounts the local `reports/` directory to `/app/reports` in the container, allowing you to access the `backtest_results.json` file in `reports/results/` after the run.
 
 Alternatively, to save to a different location (e.g., results folder):
 
@@ -60,13 +60,13 @@ The backtest will:
 1. Fetch BTC-USD and ETH-USD hourly data from Yahoo Finance (Jan 1 - Jun 30, 2024)
 2. Run the Optimized Momentum Strategy backtest
 3. Display detailed trade logs and performance metrics
-4. Save results to `backtest_results.json` in the output directory
+4. Save results to `results/backtest_results.json` in the reports directory
 
 ## Output Files
 
 After running, you'll find:
 
-- `backtest_results.json` - Complete backtest results including:
+- `results/backtest_results.json` - Complete backtest results including:
   - BTC and ETH individual results
   - Combined performance metrics
   - Trade history (summary)
@@ -109,7 +109,7 @@ docker build -f reports/Dockerfile -t optimized-backtest .
 docker run --rm -v "$(pwd)/reports:/app/reports" optimized-backtest
 
 # 4. View results
-cat reports/backtest_results.json
+cat reports/results/backtest_results.json
 ```
 
 ## Environment Variables

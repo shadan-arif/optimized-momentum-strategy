@@ -358,8 +358,9 @@ def run_optimized_backtest():
     print()
     
     # Save results to output directory (for Docker volume mount)
-    # Default to reports folder, or use OUTPUT_DIR env var if set
-    output_dir = os.getenv('OUTPUT_DIR', os.path.dirname(__file__))
+    # Default to reports/results folder, or use OUTPUT_DIR env var if set
+    default_output_dir = os.path.join(os.path.dirname(__file__), 'results')
+    output_dir = os.getenv('OUTPUT_DIR', default_output_dir)
     os.makedirs(output_dir, exist_ok=True)
     
     results = {
